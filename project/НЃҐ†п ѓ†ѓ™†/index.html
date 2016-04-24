@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="375"></canvas>
+
+<script>
+    canvas = document.getElementById('myCanvas');
+    obCanvas = canvas.getContext('2d');
+
+    var img = new Image();   // Создать новый объект Image
+    img.src = 'image2.jpg';
+    img.onload = function () {
+        obCanvas.drawImage(img, 0, 0);
+    }
+    function circle(x,y) {
+        obCanvas.beginPath();
+        obCanvas.arc(y, x, 2,0, 2 * Math.PI, false);
+        obCanvas.fillStyle = 'green';
+        obCanvas.fill();
+        obCanvas.lineWidth = 1;
+        obCanvas.strokeStyle = 'green';
+        obCanvas.stroke();
+    }
+    circle(2,2);
+    updateCanvas();
+</script>
+</body>
+</html>
